@@ -1,0 +1,393 @@
+/*
+ * kah.dev - Stylesheet
+ * =====================
+ * A minimal, terminal-inspired dark theme
+ */
+
+/* CSS Variables */
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --fg-primary: #e6edf3;
+  --fg-secondary: #8b949e;
+  --fg-dim: #484f58;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --accent-green: #3fb950;
+  --accent-purple: #a371f7;
+  --border: #30363d;
+  --font-mono: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --max-width: 700px;
+  --spacing: 1.5rem;
+}
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: var(--bg-primary);
+  color: var(--fg-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout */
+.site-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Navigation */
+.site-nav {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-link {
+  color: var(--fg-secondary);
+  text-decoration: none;
+  margin-right: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link.active::before {
+  content: '> ';
+  color: var(--accent-green);
+}
+
+/* ASCII Banner */
+.ascii-banner {
+  font-size: 0.55rem;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+@media (min-width: 480px) {
+  .ascii-banner {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .ascii-banner {
+    font-size: 0.85rem;
+  }
+}
+
+/* Intro Section */
+.intro {
+  margin-bottom: 2.5rem;
+}
+
+.intro p {
+  margin-bottom: 0.75rem;
+  color: var(--fg-secondary);
+}
+
+.intro .highlight {
+  color: var(--fg-primary);
+}
+
+/* Link Boxes */
+.link-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.link-box {
+  display: block;
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: var(--fg-primary);
+  background: var(--bg-secondary);
+  transition: all 0.2s ease;
+}
+
+.link-box:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.link-box:hover .link-title {
+  color: var(--accent);
+}
+
+.link-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.link-title::before {
+  content: '[ ';
+  color: var(--fg-dim);
+}
+
+.link-title::after {
+  content: ' ]';
+  color: var(--fg-dim);
+}
+
+.link-desc {
+  color: var(--fg-secondary);
+  font-size: 0.875rem;
+}
+
+/* Section Headers */
+.section-title {
+  color: var(--accent-green);
+  font-size: 0.875rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  text-transform: lowercase;
+}
+
+.section-title::before {
+  content: '# ';
+  color: var(--fg-dim);
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--fg-dim);
+  font-size: 0.8rem;
+}
+
+.site-footer a {
+  color: var(--fg-secondary);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+/* Blog List */
+.post-list {
+  list-style: none;
+}
+
+.post-list-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list-item:last-child {
+  border-bottom: none;
+}
+
+.post-list-date {
+  color: var(--fg-dim);
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.post-list-title {
+  margin-bottom: 0.5rem;
+}
+
+.post-list-title a {
+  color: var(--fg-primary);
+  text-decoration: none;
+}
+
+.post-list-title a:hover {
+  color: var(--accent);
+}
+
+.post-list-excerpt {
+  color: var(--fg-secondary);
+  font-size: 0.9rem;
+}
+
+/* Post Styles */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg-primary);
+}
+
+.post-date {
+  color: var(--fg-dim);
+  font-size: 0.85rem;
+}
+
+.post-tags {
+  margin-top: 0.75rem;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--accent-purple);
+  margin-right: 0.5rem;
+}
+
+.post-content {
+  color: var(--fg-secondary);
+}
+
+.post-content h2,
+.post-content h3 {
+  color: var(--fg-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-content p {
+  margin-bottom: 1rem;
+}
+
+.post-content a {
+  color: var(--accent);
+}
+
+.post-content code {
+  background: var(--bg-secondary);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-footer a {
+  color: var(--fg-secondary);
+  text-decoration: none;
+}
+
+.post-footer a:hover {
+  color: var(--accent);
+}
+
+/* Projects Page */
+.project-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  background: var(--bg-secondary);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card h3 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.project-card p {
+  color: var(--fg-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-tech {
+  font-size: 0.8rem;
+  color: var(--fg-dim);
+}
+
+/* About Page */
+.about-content p {
+  color: var(--fg-secondary);
+  margin-bottom: 1rem;
+}
+
+.about-content a {
+  color: var(--accent);
+}
+
+/* Utility Classes */
+.text-dim {
+  color: var(--fg-dim);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--fg-dim);
+}
+
+.empty-state p {
+  margin-bottom: 0.5rem;
+}

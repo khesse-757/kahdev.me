@@ -1,0 +1,38 @@
+# kah.dev - Site Configuration
+# =============================
+
+title: KAH
+description: Personal site and projects
+author: KAH
+url: "https://kahdev.me"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Sass/SCSS settings
+sass:
+  style: compressed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts/
+  - Makefile
+  - "*.sh"
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
