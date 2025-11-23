@@ -12,7 +12,7 @@ A minimal, terminal-inspired site built with Jekyll.
 
 ## Live Site
 
-[https://kah.dev](https://kah.dev)
+[https://kahdev.me](https://kahdev.me)
 
 ## Local Development
 
