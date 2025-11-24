@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building kahdev.me: Jekyll + GitHub Pages + Cloudflare"
-date: 2025-11-23
+date: 2025-11-24
 tags: [jekyll, github-pages, cloudflare, tutorial]
 ---
 
