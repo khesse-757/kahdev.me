@@ -180,6 +180,24 @@ git remote add origin git@github.com:username/repo.git
 
 # Push code
 git push -u origin main
+
+# Create an annotated tag
+git tag -a v1.0.0 -m "comment"
+
+# Push the tag to remote
+git push origin v1.0.0
+
+# Push all tags at once
+git push --tags
+
+# List all tags
+git tag
+
+# Delete a local tag
+git tag -d v1.0.0
+
+# Delete a remote tag
+git push origin --delete v1.0.0
 ```
 
 If you need to change from HTTPS to SSH:
