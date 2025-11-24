@@ -83,14 +83,49 @@ body {
   color: var(--accent-green);
 }
 
-/* ASCII Banner */
+/* ASCII Banner - UPDATED FOR MATRIX EFFECT */
 .ascii-banner {
   font-size: 0.55rem;
   line-height: 1.1;
-  color: var(--accent);
+  color: var(--accent-green);
   margin-bottom: 1.5rem;
   white-space: pre;
   overflow-x: auto;
+}
+
+.ascii-banner.animated {
+  opacity: 0;
+}
+
+.ascii-banner.animated.show {
+  opacity: 1;
+}
+
+.ascii-char {
+  display: inline-block;
+  opacity: 0;
+  /* Increased drop distance */
+  transform: translateY(-50px);
+}
+
+.ascii-char.fall {
+  /* Faster duration (0.3s) and ease-in for gravity feel */
+  animation: fall-in 0.3s ease-in forwards;
+}
+
+@keyframes fall-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  60% {
+    /* Characters become fully visible before hitting bottom */
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 480px) {
