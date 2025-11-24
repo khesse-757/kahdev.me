@@ -1,7 +1,6 @@
-# kah.dev
+# kahdev.me
 
-A minimal, terminal-inspired site built with Jekyll.
-
+A minimal, terminal-inspired personal site built with Jekyll and hosted on GitHub Pages.
 ```
     __ __ ___    __  __
    / //_//   |  / / / /
@@ -23,11 +22,14 @@ A minimal, terminal-inspired site built with Jekyll.
 - Jekyll (`gem install jekyll`)
 
 ### Setup
-
 ```bash
-# Clone the repo
-git clone https://github.com/khesse-757/kah.dev.git
-cd kah.dev
+# Clone the repo (SSH)
+git clone git@github.com:khesse-757/kahdev.me.git
+cd kahdev.me
+
+# Or clone via HTTPS
+git clone https://github.com/khesse-757/kahdev.me.git
+cd kahdev.me
 
 # Install dependencies
 bundle install
@@ -41,7 +43,6 @@ bundle exec jekyll serve
 ### Generate ASCII Banner
 
 The ASCII art banner is generated using `figlet`:
-
 ```bash
 # Install figlet
 # macOS: brew install figlet
@@ -52,7 +53,6 @@ The ASCII art banner is generated using `figlet`:
 ```
 
 ## Structure
-
 ```
 .
 ├── _config.yml          # Site configuration
@@ -64,6 +64,7 @@ The ASCII art banner is generated using `figlet`:
 │   ├── css/style.css    # Styles
 │   └── favicon.svg      # Favicon
 ├── scripts/             # Helper scripts
+├── CNAME                # Custom domain configuration
 ├── index.html           # Homepage
 ├── blog.html            # Blog listing
 ├── projects.html        # Projects page
@@ -76,16 +77,15 @@ The ASCII art banner is generated using `figlet`:
 ### New Blog Post
 
 Create a file in `_posts/` with the format `YYYY-MM-DD-title.md`:
-
 ```markdown
 ---
 layout: post
-title: "Your Post Title"
+title: "Title"
 date: 2025-11-23
 tags: [tag1, tag2]
 ---
 
-Your content here...
+Stuff...
 ```
 
 ### New Project
@@ -102,9 +102,15 @@ Edit `projects.html` and add a new project card:
 
 ## Customization
 
-- Colors and fonts: Edit CSS variables in `assets/css/style.css`
-- Site info: Edit `_config.yml`
-- ASCII banner: Use `scripts/generate-banner.sh` with different fonts
+- **Colors and fonts:** Edit CSS variables in `assets/css/style.css`
+- **Site info:** Edit `_config.yml`
+- **ASCII banner:** Use `scripts/generate-banner.sh` with different fonts
+
+## Deployment
+
+This site uses GitHub Actions to automatically build and deploy to GitHub Pages when you push to `main`.
+
+The workflow is defined in `.github/workflows/pages.yml` and runs on every push.
 
 ## License
 
