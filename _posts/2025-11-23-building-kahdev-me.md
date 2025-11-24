@@ -24,7 +24,7 @@ Simple site with minimal complexity:
 
 ## Part 1: Domain Registration
 
-I chose `kahdev.me` for $16/year on Cloudflare. The `.dev` TLD I originally wanted was $89/year - domain prices vary wildly by extension. Google Registry for devs costs more.
+I chose `kahdev.me` for $16/year on Cloudflare. The `.dev` TLD (top level domain) I originally wanted was $89/year (kah.dev). Apparently domain prices vary wildly by extension.
 
 **Note:** Cloudflare Registrar sells domains at wholesale cost with no markup.
 
