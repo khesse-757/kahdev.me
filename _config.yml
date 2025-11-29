@@ -23,6 +23,7 @@ exclude:
   - scripts/
   - Makefile
   - "*.sh"
+  - google*.html
 
 # Collections
 collections:
