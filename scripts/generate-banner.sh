@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# generate-banner.sh - Generate ASCII art banner for kah.dev
+# generate-banner.sh - Generate ASCII art banner for kahdev.me
 #
 # Usage: ./generate-banner.sh [text] [font]
 #
