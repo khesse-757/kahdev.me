@@ -62,6 +62,7 @@ The ASCII art banner is generated using `figlet`:
 ├── _posts/              # Blog posts (markdown)
 ├── assets/
 │   ├── css/style.css    # Styles
+│   ├── js/              # JavaScript files
 │   └── favicon.svg      # Favicon
 ├── scripts/             # Helper scripts
 ├── CNAME                # Custom domain configuration
