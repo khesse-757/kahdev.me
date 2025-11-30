@@ -2,7 +2,7 @@
 layout: post
 title: "Building an Interactive 3D CSS Cube"
 date: 2025-11-30
-categories: [projects, css, javascript]
+tags: [projects, css, javascript]
 ---
 
 I've been experimenting with CSS animations and wanted to build something interactive. After seeing some impressive examples online, I decided to create a 3D rotating cube with full user control. Also set it up on its own subdomain to learn the deployment process.
