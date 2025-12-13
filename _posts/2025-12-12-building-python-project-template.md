@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building a Python Project Template"
-date: 2025-12-13
+date: 2025-12-12
 tags: [python, tooling, automation]
 ---
 
