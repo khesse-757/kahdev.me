@@ -113,6 +113,27 @@ This site uses GitHub Actions to automatically build and deploy to GitHub Pages 
 
 The workflow is defined in `.github/workflows/pages.yml` and runs on every push.
 
+## Versioning and Releases
+
+This repository uses automated versioning with GitHub Actions. To create a new release:
+
+```bash
+# Use the helper script (recommended)
+./scripts/bump-version.sh
+
+# Or manually edit VERSION file
+echo "1.2.0" > VERSION
+
+# Commit and push
+git add VERSION
+git commit -m "Bump version to 1.2.0"
+git push origin main
+```
+
+The GitHub Action will automatically create a tag and release with a generated changelog.
+
+See [VERSIONING.md](VERSIONING.md) for detailed documentation.
+
 ## License
 
 MIT License - feel free to use this as a template.
