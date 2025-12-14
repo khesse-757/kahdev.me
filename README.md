@@ -136,4 +136,4 @@ See [VERSIONING.md](VERSIONING.md) for detailed documentation.
 
 ## License
 
-MIT License - feel free to use this as a template.
+MIT
