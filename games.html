@@ -1,0 +1,387 @@
+---
+layout: default
+title: Games
+description: games and interactive experiments
+---
+
+<style>
+/* Banner Container */
+.games-banner {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  margin: 1rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  min-height: 180px;
+}
+
+@media (min-width: 640px) {
+  .games-banner {
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .games-banner {
+    gap: 3rem;
+  }
+}
+
+.banner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-title {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #22c55e;
+  letter-spacing: 0.3em;
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Soccer Ball Animations */
+.ball-wrapper {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ball-container {
+  animation: bounce 1.2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.ball {
+  display: block;
+  animation: squash 1.2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.ball-shadow {
+  width: 50px;
+  height: 10px;
+  background: radial-gradient(ellipse, rgba(34, 197, 94, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  margin-top: 2px;
+  animation: shadow-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-55px); }
+}
+
+@keyframes squash {
+  0%, 100% { transform: scaleX(1.12) scaleY(0.88); }
+  35%, 65% { transform: scaleX(0.94) scaleY(1.06); }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.7; }
+  50% { transform: scaleX(0.5); opacity: 0.25; }
+}
+
+/* Cube Animations */
+.cube-wrapper {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube-svg {
+  animation: cube-float 3s ease-in-out infinite;
+}
+
+@keyframes cube-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.face-top { animation: color-top 4s ease-in-out infinite; }
+.face-left { animation: color-left 4s ease-in-out infinite; }
+.face-right { animation: color-right 4s ease-in-out infinite; }
+
+@keyframes color-top {
+  0%, 100% { fill: #fbbf24; }
+  33% { fill: #fb923c; }
+  66% { fill: #fbbf24; }
+}
+@keyframes color-left {
+  0%, 100% { fill: #22c55e; }
+  33% { fill: #fbbf24; }
+  66% { fill: #ef4444; }
+}
+@keyframes color-right {
+  0%, 100% { fill: #ef4444; }
+  33% { fill: #22c55e; }
+  66% { fill: #3b82f6; }
+}
+
+.grid-line {
+  stroke: rgba(0,0,0,0.25);
+  stroke-width: 0.5;
+}
+
+/* Queen Card Animations */
+.card-wrapper {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-svg {
+  filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.4));
+  animation: card-hover 2.5s ease-in-out infinite;
+}
+
+@keyframes card-hover {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+.eye-open {
+  animation: wink 4s ease-in-out infinite;
+}
+
+.eye-wink {
+  animation: wink-line 4s ease-in-out infinite;
+}
+
+@keyframes wink {
+  0%, 15%, 25%, 100% { opacity: 1; }
+  18%, 22% { opacity: 0; }
+}
+
+@keyframes wink-line {
+  0%, 15%, 25%, 100% { opacity: 0; }
+  18%, 22% { opacity: 1; }
+}
+
+.heart { fill: #dc2626; }
+.queen-red { fill: #dc2626; }
+
+/* Game Cards */
+.game-card {
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg-secondary);
+}
+
+.game-card h3 {
+  margin: 0 0 0.75rem 0;
+}
+
+.game-card h3 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.game-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.game-card p {
+  margin: 0 0 1rem 0;
+  color: var(--text-secondary);
+}
+
+.game-tech {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.game-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.game-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.game-links a:hover {
+  color: var(--accent);
+}
+
+.game-links .play-link {
+  color: var(--accent);
+  font-weight: 500;
+}
+</style>
+
+<div class="games-banner">
+  <!-- Soccer Ball -->
+  <div class="banner-item">
+    <div class="ball-wrapper">
+      <div class="ball-container">
+        <svg class="ball" width="60" height="60" viewBox="0 0 20 20" style="image-rendering: pixelated;">
+          <!-- Row 0 --><rect x="7" y="0" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="0" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="0" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="0" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="0" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="0" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Row 1 --><rect x="5" y="1" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="1" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="1" width="1" height="1" fill="#fff"/><rect x="8" y="1" width="1" height="1" fill="#fff"/><rect x="9" y="1" width="1" height="1" fill="#fff"/><rect x="10" y="1" width="1" height="1" fill="#fff"/><rect x="11" y="1" width="1" height="1" fill="#fff"/><rect x="12" y="1" width="1" height="1" fill="#fff"/><rect x="13" y="1" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="1" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Row 2 --><rect x="4" y="2" width="1" height="1" fill="#f0f0f0"/><rect x="5" y="2" width="1" height="1" fill="#fff"/><rect x="6" y="2" width="1" height="1" fill="#fff"/><rect x="7" y="2" width="1" height="1" fill="#fff"/><rect x="8" y="2" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="2" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="2" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="2" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="2" width="1" height="1" fill="#fff"/><rect x="13" y="2" width="1" height="1" fill="#fff"/><rect x="14" y="2" width="1" height="1" fill="#fff"/><rect x="15" y="2" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Row 3 --><rect x="3" y="3" width="1" height="1" fill="#f0f0f0"/><rect x="4" y="3" width="1" height="1" fill="#fff"/><rect x="5" y="3" width="1" height="1" fill="#fff"/><rect x="6" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="7" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="8" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="13" y="3" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="3" width="1" height="1" fill="#fff"/><rect x="15" y="3" width="1" height="1" fill="#fff"/><rect x="16" y="3" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Row 4 --><rect x="2" y="4" width="1" height="1" fill="#f0f0f0"/><rect x="3" y="4" width="1" height="1" fill="#fff"/><rect x="4" y="4" width="1" height="1" fill="#fff"/><rect x="5" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="7" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="8" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="13" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="4" width="1" height="1" fill="#1a1a1a"/><rect x="15" y="4" width="1" height="1" fill="#fff"/><rect x="16" y="4" width="1" height="1" fill="#fff"/><rect x="17" y="4" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Row 5-6 white center band -->
+          <rect x="1" y="5" width="1" height="1" fill="#f0f0f0"/><rect x="2" y="5" width="1" height="1" fill="#fff"/><rect x="3" y="5" width="1" height="1" fill="#fff"/><rect x="4" y="5" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="5" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="5" width="1" height="1" fill="#1a1a1a"/><rect x="7" y="5" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="5" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="5" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="5" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="5" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="5" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="5" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="5" width="1" height="1" fill="#1a1a1a"/><rect x="15" y="5" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="5" width="1" height="1" fill="#fff"/><rect x="17" y="5" width="1" height="1" fill="#fff"/><rect x="18" y="5" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="1" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="2" y="6" width="1" height="1" fill="#fff"/><rect x="3" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="6" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="15" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="6" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="6" width="1" height="1" fill="#fff"/><rect x="18" y="6" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Row 7-12 with center pentagon -->
+          <rect x="0" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="1" y="7" width="1" height="1" fill="#fff"/><rect x="2" y="7" width="1" height="1" fill="#fff"/><rect x="3" y="7" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="7" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="7" width="1" height="1" fill="#f0f0f0"/><rect x="15" y="7" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="7" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="7" width="1" height="1" fill="#fff"/><rect x="18" y="7" width="1" height="1" fill="#ccc"/><rect x="19" y="7" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="0" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="1" y="8" width="1" height="1" fill="#fff"/><rect x="2" y="8" width="1" height="1" fill="#fff"/><rect x="3" y="8" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="8" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="8" width="1" height="1" fill="#f0f0f0"/><rect x="15" y="8" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="8" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="8" width="1" height="1" fill="#fff"/><rect x="18" y="8" width="1" height="1" fill="#ccc"/><rect x="19" y="8" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Center pentagon rows 9-10 -->
+          <rect x="0" y="9" width="1" height="1" fill="#f0f0f0"/><rect x="1" y="9" width="1" height="1" fill="#fff"/><rect x="2" y="9" width="1" height="1" fill="#fff"/><rect x="3" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="9" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="9" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="9" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="9" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="9" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="9" width="1" height="1" fill="#f0f0f0"/><rect x="15" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="9" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="9" width="1" height="1" fill="#fff"/><rect x="18" y="9" width="1" height="1" fill="#ccc"/><rect x="19" y="9" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="0" y="10" width="1" height="1" fill="#f0f0f0"/><rect x="1" y="10" width="1" height="1" fill="#fff"/><rect x="2" y="10" width="1" height="1" fill="#fff"/><rect x="3" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="10" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="10" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="10" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="10" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="10" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="10" width="1" height="1" fill="#f0f0f0"/><rect x="15" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="10" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="10" width="1" height="1" fill="#fff"/><rect x="18" y="10" width="1" height="1" fill="#ccc"/><rect x="19" y="10" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Row 11-12 -->
+          <rect x="0" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="1" y="11" width="1" height="1" fill="#fff"/><rect x="2" y="11" width="1" height="1" fill="#fff"/><rect x="3" y="11" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="11" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="11" width="1" height="1" fill="#f0f0f0"/><rect x="15" y="11" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="11" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="11" width="1" height="1" fill="#ccc"/><rect x="18" y="11" width="1" height="1" fill="#ccc"/><rect x="19" y="11" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="0" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="1" y="12" width="1" height="1" fill="#fff"/><rect x="2" y="12" width="1" height="1" fill="#fff"/><rect x="3" y="12" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="12" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="12" width="1" height="1" fill="#f0f0f0"/><rect x="15" y="12" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="12" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="12" width="1" height="1" fill="#ccc"/><rect x="18" y="12" width="1" height="1" fill="#ccc"/><rect x="19" y="12" width="1" height="1" fill="#f0f0f0"/>
+          <!-- Bottom rows 13-19 mirroring top -->
+          <rect x="1" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="2" y="13" width="1" height="1" fill="#fff"/><rect x="3" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="4" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="13" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="15" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="13" width="1" height="1" fill="#1a1a1a"/><rect x="17" y="13" width="1" height="1" fill="#ccc"/><rect x="18" y="13" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="1" y="14" width="1" height="1" fill="#f0f0f0"/><rect x="2" y="14" width="1" height="1" fill="#fff"/><rect x="3" y="14" width="1" height="1" fill="#fff"/><rect x="4" y="14" width="1" height="1" fill="#1a1a1a"/><rect x="5" y="14" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="14" width="1" height="1" fill="#1a1a1a"/><rect x="7" y="14" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="14" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="14" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="14" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="14" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="14" width="1" height="1" fill="#f0f0f0"/><rect x="13" y="14" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="14" width="1" height="1" fill="#1a1a1a"/><rect x="15" y="14" width="1" height="1" fill="#1a1a1a"/><rect x="16" y="14" width="1" height="1" fill="#ccc"/><rect x="17" y="14" width="1" height="1" fill="#ccc"/><rect x="18" y="14" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="2" y="15" width="1" height="1" fill="#f0f0f0"/><rect x="3" y="15" width="1" height="1" fill="#fff"/><rect x="4" y="15" width="1" height="1" fill="#fff"/><rect x="5" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="6" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="7" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="8" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="13" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="15" width="1" height="1" fill="#1a1a1a"/><rect x="15" y="15" width="1" height="1" fill="#ccc"/><rect x="16" y="15" width="1" height="1" fill="#ccc"/><rect x="17" y="15" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="3" y="16" width="1" height="1" fill="#f0f0f0"/><rect x="4" y="16" width="1" height="1" fill="#fff"/><rect x="5" y="16" width="1" height="1" fill="#fff"/><rect x="6" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="7" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="8" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="13" y="16" width="1" height="1" fill="#1a1a1a"/><rect x="14" y="16" width="1" height="1" fill="#ccc"/><rect x="15" y="16" width="1" height="1" fill="#ccc"/><rect x="16" y="16" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="4" y="17" width="1" height="1" fill="#f0f0f0"/><rect x="5" y="17" width="1" height="1" fill="#fff"/><rect x="6" y="17" width="1" height="1" fill="#fff"/><rect x="7" y="17" width="1" height="1" fill="#fff"/><rect x="8" y="17" width="1" height="1" fill="#1a1a1a"/><rect x="9" y="17" width="1" height="1" fill="#1a1a1a"/><rect x="10" y="17" width="1" height="1" fill="#1a1a1a"/><rect x="11" y="17" width="1" height="1" fill="#1a1a1a"/><rect x="12" y="17" width="1" height="1" fill="#ccc"/><rect x="13" y="17" width="1" height="1" fill="#ccc"/><rect x="14" y="17" width="1" height="1" fill="#ccc"/><rect x="15" y="17" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="5" y="18" width="1" height="1" fill="#f0f0f0"/><rect x="6" y="18" width="1" height="1" fill="#f0f0f0"/><rect x="7" y="18" width="1" height="1" fill="#ccc"/><rect x="8" y="18" width="1" height="1" fill="#ccc"/><rect x="9" y="18" width="1" height="1" fill="#ccc"/><rect x="10" y="18" width="1" height="1" fill="#ccc"/><rect x="11" y="18" width="1" height="1" fill="#ccc"/><rect x="12" y="18" width="1" height="1" fill="#ccc"/><rect x="13" y="18" width="1" height="1" fill="#f0f0f0"/><rect x="14" y="18" width="1" height="1" fill="#f0f0f0"/>
+          <rect x="7" y="19" width="1" height="1" fill="#f0f0f0"/><rect x="8" y="19" width="1" height="1" fill="#f0f0f0"/><rect x="9" y="19" width="1" height="1" fill="#f0f0f0"/><rect x="10" y="19" width="1" height="1" fill="#f0f0f0"/><rect x="11" y="19" width="1" height="1" fill="#f0f0f0"/><rect x="12" y="19" width="1" height="1" fill="#f0f0f0"/>
+        </svg>
+      </div>
+      <div class="ball-shadow"></div>
+    </div>
+  </div>
+
+  <!-- GAMES Title -->
+  <div class="banner-item">
+    <h1 class="banner-title">GAMES</h1>
+  </div>
+
+  <!-- Rubik's Cube -->
+  <div class="banner-item">
+    <div class="cube-wrapper">
+      <svg class="cube-svg" width="70" height="80" viewBox="0 0 80 92">
+        <g class="face-top">
+          <polygon points="40,4 72,20 40,36 8,20" fill="#fbbf24"/>
+          <line x1="18.67" y1="14.67" x2="50.67" y2="30.67" class="grid-line"/>
+          <line x1="29.33" y1="9.33" x2="61.33" y2="25.33" class="grid-line"/>
+          <line x1="24" y1="28" x2="56" y2="12" class="grid-line"/>
+          <line x1="32" y1="32" x2="64" y2="16" class="grid-line"/>
+        </g>
+        <g class="face-left">
+          <polygon points="8,20 40,36 40,84 8,68" fill="#22c55e"/>
+          <line x1="8" y1="36" x2="40" y2="52" class="grid-line"/>
+          <line x1="8" y1="52" x2="40" y2="68" class="grid-line"/>
+          <line x1="18.67" y1="30.67" x2="18.67" y2="78.67" class="grid-line"/>
+          <line x1="29.33" y1="25.33" x2="29.33" y2="73.33" class="grid-line"/>
+        </g>
+        <g class="face-right">
+          <polygon points="40,36 72,20 72,68 40,84" fill="#ef4444"/>
+          <line x1="40" y1="52" x2="72" y2="36" class="grid-line"/>
+          <line x1="40" y1="68" x2="72" y2="52" class="grid-line"/>
+          <line x1="50.67" y1="30.67" x2="50.67" y2="78.67" class="grid-line"/>
+          <line x1="61.33" y1="25.33" x2="61.33" y2="73.33" class="grid-line"/>
+        </g>
+        <line x1="8" y1="20" x2="40" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <line x1="40" y1="4" x2="72" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Queen of Hearts -->
+  <div class="banner-item">
+    <div class="card-wrapper">
+      <svg class="card-svg" width="50" height="72" viewBox="0 0 56 80" style="image-rendering: pixelated;">
+        <rect x="0" y="0" width="56" height="80" rx="4" fill="#fefefe"/>
+        <rect x="2" y="2" width="52" height="76" rx="3" fill="#fff" stroke="#e5e5e5" stroke-width="1"/>
+        
+        <text x="6" y="14" font-size="10" font-weight="bold" font-family="Georgia, serif" class="queen-red">Q</text>
+        <path d="M6,17 L9,23 L12,17 Q9,20 6,17" class="heart"/>
+        
+        <g transform="rotate(180, 28, 40)">
+          <text x="6" y="14" font-size="10" font-weight="bold" font-family="Georgia, serif" class="queen-red">Q</text>
+          <path d="M6,17 L9,23 L12,17 Q9,20 6,17" class="heart"/>
+        </g>
+
+        <path d="M23,32 L28,42 L33,32 Q28,37 23,32" class="heart" transform="scale(1.5) translate(-9, -8)"/>
+        
+        <!-- Crown -->
+        <rect x="20" y="44" width="16" height="3" fill="#fbbf24"/>
+        <rect x="22" y="41" width="2" height="3" fill="#fbbf24"/>
+        <rect x="27" y="41" width="2" height="3" fill="#fbbf24"/>
+        <rect x="32" y="41" width="2" height="3" fill="#fbbf24"/>
+        <rect x="23" y="42" width="1" height="1" fill="#dc2626"/>
+        <rect x="28" y="42" width="1" height="1" fill="#dc2626"/>
+        <rect x="32" y="42" width="1" height="1" fill="#dc2626"/>
+        
+        <!-- Face -->
+        <rect x="22" y="47" width="12" height="10" fill="#fcd9b6"/>
+        
+        <!-- Hair -->
+        <rect x="20" y="47" width="2" height="12" fill="#4a3728"/>
+        <rect x="34" y="47" width="2" height="12" fill="#4a3728"/>
+        <rect x="22" y="47" width="2" height="2" fill="#4a3728"/>
+        <rect x="32" y="47" width="2" height="2" fill="#4a3728"/>
+        
+        <!-- Eyes -->
+        <rect x="24" y="50" width="2" height="2" fill="#1a1a1a"/>
+        <rect x="30" y="50" width="2" height="2" fill="#1a1a1a" class="eye-open"/>
+        <rect x="30" y="51" width="2" height="1" fill="#1a1a1a" class="eye-wink"/>
+        
+        <!-- Blush -->
+        <rect x="23" y="53" width="2" height="1" fill="#f4a0a0" opacity="0.6"/>
+        <rect x="31" y="53" width="2" height="1" fill="#f4a0a0" opacity="0.6"/>
+        
+        <!-- Smile -->
+        <rect x="26" y="54" width="4" height="1" fill="#c9736e"/>
+        <rect x="27" y="55" width="2" height="1" fill="#c9736e"/>
+        
+        <!-- Dress -->
+        <rect x="25" y="57" width="6" height="3" fill="#fcd9b6"/>
+        <rect x="22" y="60" width="12" height="8" fill="#dc2626"/>
+        <rect x="26" y="60" width="4" height="2" fill="#fefefe"/>
+        <rect x="24" y="64" width="2" height="2" fill="#fbbf24"/>
+        <rect x="30" y="64" width="2" height="2" fill="#fbbf24"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="intro">
+  <p>Games and interactive experiments. Some for fun, some for learning.</p>
+</div>
+
+<h2 class="section-title">available games</h2>
+
+<div class="game-card">
+  <h3><a href="https://sudoku.kahdev.me" target="_blank">Sudoku Terminal</a></h3>
+  <p>A clean, terminal-inspired Sudoku game with multiple themes and difficulty levels. Features auto-notes, pencil mode, undo/redo, hints, and full keyboard navigation.</p>
+  <div class="game-tech">react, typescript, vite, zustand, framer-motion</div>
+  <div class="game-links">
+    <a href="https://sudoku.kahdev.me" target="_blank" class="play-link">Play →</a>
+    <a href="https://github.com/khesse-757/sudoku-game" target="_blank">Source</a>
+  </div>
+</div>
+
+<div class="empty-state" style="margin-top: 2rem;">
+  <p class="text-dim">More games coming soon...</p>
+</div>
