@@ -255,15 +255,15 @@ export default function GamesBanner() {
               <polygon points="40,4 72,20 40,36 8,20" fill="#fbbf24"/>
               <line x1="18.67" y1="14.67" x2="50.67" y2="30.67" className="grid-line"/>
               <line x1="29.33" y1="9.33" x2="61.33" y2="25.33" className="grid-line"/>
-              <line x1="24" y1="28" x2="56" y2="12" className="grid-line"/>
-              <line x1="32" y1="32" x2="64" y2="16" className="grid-line"/>
+              <line x1="50.67" y1="9.33" x2="18.67" y2="25.33" className="grid-line"/>
+              <line x1="61.33" y1="14.67" x2="29.33" y2="30.67" className="grid-line"/>
             </g>
             <g className="face-left">
               <polygon points="8,20 40,36 40,84 8,68" fill="#22c55e"/>
               <line x1="8" y1="36" x2="40" y2="52" className="grid-line"/>
               <line x1="8" y1="52" x2="40" y2="68" className="grid-line"/>
-              <line x1="18.67" y1="30.67" x2="18.67" y2="78.67" className="grid-line"/>
-              <line x1="29.33" y1="25.33" x2="29.33" y2="73.33" className="grid-line"/>
+              <line x1="18.67" y1="25.33" x2="18.67" y2="73.33" className="grid-line"/>
+              <line x1="29.33" y1="30.67" x2="29.33" y2="78.67" className="grid-line"/>
             </g>
             <g className="face-right">
               <polygon points="40,36 72,20 72,68 40,84" fill="#ef4444"/>
