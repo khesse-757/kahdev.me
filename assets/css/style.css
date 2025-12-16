@@ -503,3 +503,22 @@ body {
     display: table;
   }
 }
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.highlight .c, .highlight .c1, .highlight .cm { color: #6a737d; } /* comments */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp { color: #ff7b72; } /* keywords */
+.highlight .s, .highlight .s1, .highlight .s2 { color: #a5d6ff; } /* strings */
+.highlight .n, .highlight .nf, .highlight .nx { color: #d2a8ff; } /* functions */
+.highlight .o, .highlight .p { color: #f0f0f0; } /* operators, punctuation */
+.highlight .mi, .highlight .mf { color: #79c0ff; } /* numbers */
+.highlight .na { color: #79c0ff; } /* attributes */
+.highlight .nc, .highlight .nn { color: #ffa657; } /* classes, namespaces */
+.highlight .nb { color: #79c0ff; } /* builtins */
+.highlight .kr { color: #ff7b72; } /* keyword reserved */
+.highlight .nt { color: #7ee787; } /* tags */

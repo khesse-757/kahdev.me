@@ -9,6 +9,8 @@ A minimal, terminal-inspired personal site built with Jekyll and hosted on GitHu
 /_/ |_/_/  |_/_/ /_/   
 ```
 
+![kahdev website](/assets/images/kahdev.png)
+
 ## Live Site
 
 [https://kahdev.me](https://kahdev.me)
