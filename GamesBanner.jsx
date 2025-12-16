@@ -156,16 +156,16 @@ export default function GamesBanner() {
           66% { fill: #fbbf24; }
         }
         @keyframes color-left {
-          0%, 100% { fill: #22c55e; }
-          33% { fill: #fbbf24; }
-          66% { fill: #ef4444; }
-        }
-        @keyframes color-right {
           0%, 100% { fill: #ef4444; }
           33% { fill: #22c55e; }
           66% { fill: #3b82f6; }
         }
-
+        @keyframes color-right {
+          0%, 100% { fill: #22c55e; }
+          33% { fill: #fbbf24; }
+          66% { fill: #ef4444; }
+        }
+          
         .grid-line {
           stroke: rgba(0,0,0,0.25);
           stroke-width: 0.5;
