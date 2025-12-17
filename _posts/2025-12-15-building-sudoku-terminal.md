@@ -13,7 +13,7 @@ The whole thing took a weekend. I used Claude for almost all of it.
 
 ## The Stack
 
-I wanted to use technologies I don't normally touch. I went with React, TypeScript, Vite, Zustand, Framer Motion, and CSS Modules.
+I wanted to use technologies I don't normally touch. I went with React, TypeScript, Vite, Zustand, and CSS Modules.
 
 React was a big shift. In JavaScript, you grab an element with `getElementById` and change it. React works differently. You build small components where each one is responsible for its own chunk of the UI. React updates the page when things change. It took some getting used to.
 
@@ -47,18 +47,6 @@ export const useStore = create<Store>()(
     { name: 'sudoku-storage' }
   )
 );
-```
-
-Framer Motion was easy. Swap `div` for `motion.div`, add some animation properties, and you get smooth transitions.
-
-```tsx
-<motion.div
-  whileTap={{ scale: 0.95 }}
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
->
-  {cell.value}
-</motion.div>
 ```
 
 ## Claude
