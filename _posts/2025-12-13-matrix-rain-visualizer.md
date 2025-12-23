@@ -5,7 +5,7 @@ date: 2025-12-13
 tags: [python, pyscript, visualization]
 ---
 
-This site has a green terminal theme, and I already had a rain drop effect on the main page for the ASCII art and my initials. But I wanted something more Matrixy. Like the digital rain from Neo's apartment scene. So I built it with PyScript to test out my Python template.
+This site has a green terminal theme, and I already had a rain drop effect on the main page for the ASCII art and my initials. But I wanted something more Matrixy. Like the digital rain from the openning scene scene. So I built it with PyScript to test out my Python template.
 
 ## The Concept
 
