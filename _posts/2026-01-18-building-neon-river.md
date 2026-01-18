@@ -4,10 +4,9 @@ title: "Building Neon River"
 date: 2026-01-18
 tags: [typescript, canvas, gamedev, pixel-art, ai-art]
 ---
+I have been playing Jak and Daxter games since the PS2 era. The Precursor Legacy has a special place in my heart. One mini game was fishing. You stand on a dock with a net, and catch fish swimming by. So simple and so much fun. I spent way too many hours on it as a kid with friends just passing the controller around. The amazing voice of the fisherman, those 5 pound fishies, the poinsonous eels! Naughty Dog just put so much love into this. The world they built is incredible. 
 
 ![Neon River gameplay](/assets/images/neon-river-background.png)
-
-I have been playing Jak and Daxter games since the PS2 era. The Precursor Legacy has a special place in my heart. One mini game was fishing. You stand on a dock with a net, and catch fish swimming by. So simple and so much fun. I spent way too many hours on it as a kid with friends just passing the controller around. The amazing voice of the fisherman, those 5 pound fishies, the poinsonous eels! Naughty Dog just put so much love into this. The world they built is incredible. 
 
 I made this game because I wanted to recreate that feeling. Something that just brings joy. A quiet river at night, away from the futuristic city in the distance.
 
